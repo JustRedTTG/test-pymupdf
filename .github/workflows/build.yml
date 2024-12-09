@@ -4,7 +4,7 @@ on:
       - main
     paths:
       - '**/*.py'
-      - '.github/workflows/build.yaml'
+      - '.github/workflows/build.yml'
       - '*.txt'
 
 jobs:
