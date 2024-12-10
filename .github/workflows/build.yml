@@ -37,11 +37,15 @@ jobs:
           script-name: test_pymupdf.py
           report: compilation-report.xml
           mode: app
+          
+      - name: Test
+        run: build/test_pymupdf.exe
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.APP_NAME }} ${{ runner.os }}
           path: |
+            test.png
             build/test_pymupdf.exe
             compilation-report.xml
