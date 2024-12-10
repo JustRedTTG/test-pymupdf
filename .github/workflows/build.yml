@@ -37,6 +37,8 @@ jobs:
           script-name: test_pymupdf.py
           report: compilation-report.xml
           mode: app
+          nofollow-import-to: |
+            pymupdf.mupdf
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

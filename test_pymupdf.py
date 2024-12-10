@@ -1,4 +1,5 @@
 import pymupdf
+import pymupdf._mupdf
 
 pdf = pymupdf.open('test.pdf', filetype='pdf')
 
