@@ -1,7 +1,9 @@
-import pymupdf
+import fitz
+from fitz import Pixmap
 
-pdf = pymupdf.open('test.pdf', filetype='pdf')
+pdf = fitz.open('test.pdf', filetype='pdf')
 
 pdf_page = pdf[0]
 
-pdf_page.get_pixmap().writePNG('test.png')
+pixmap: Pixmap = pdf_page.get_pixmap()
+pixmap.save('test.png')
