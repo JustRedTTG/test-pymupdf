@@ -21,23 +21,9 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.9'
           cache: 'pip'
           cache-dependency-path: requirements*.txt
-          
-      - name: Set up system dependencies
-        shell: bash
-        run: |
-          echo "Installing dependencies for ${{ matrix.os }}"
-          if [ "${{ matrix.os }}" = "windows-latest" ]; then
-            choco install visualstudio2022buildtools --params "--add Microsoft.VisualStudio.Workload.VCTools";
-          elif [ "${{ matrix.os }}" = "ubuntu-latest" ]; then
-            echo none
-            #sudo apt update && sudo apt install -y build-essential;
-          elif [ "${{ matrix.os }}" = "macos-latest" ]; then
-            echo none
-          fi
-
 
       - name: Install python dependencies
         run: |
