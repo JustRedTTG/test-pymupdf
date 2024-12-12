@@ -26,6 +26,7 @@ jobs:
           cache-dependency-path: requirements*.txt
           
       - name: Set up system dependencies
+        shell: bash
         run: |
           echo "Installing dependencies for ${{ matrix.os }}"
           if [ "${{ matrix.os }}" = "windows-latest" ]; then
